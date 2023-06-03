@@ -1,0 +1,28 @@
+nz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .user-info {
+    img {
+      height: 50px;
+    }
+  }
+
+  .nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      font-weight: bold;
+      margin: 0;
+      font-size: 17px;
+
+      li {
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

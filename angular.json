@@ -29,6 +29,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/assets/img",
               {
                 "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
@@ -102,7 +103,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/img"
             ],
             "styles": [
               "src/styles.scss"
@@ -113,5 +115,8 @@
       }
     }
   },
-  "defaultProject": "coldstack-frontend"
+  "defaultProject": "coldstack-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

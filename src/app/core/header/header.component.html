@@ -1,0 +1,28 @@
+<nz-affix>
+  <nz-header>
+    <div class="left">
+      <img src="assets/img/logo.png" alt="Logo">
+    </div>
+    <div class="center nav">
+      <ul>
+        <li>Send</li>
+        <li>Receive</li>
+      </ul>
+    </div>
+    <div class="right">
+      <button nz-button nzType="primary" nzSize="large" *ngIf="!connectedAddress" (click)="toggleLogin()">Login</button>
+      <div class="user-info" *ngIf="connectedAddress">
+        <a nz-dropdown [nzDropdownMenu]="menu">
+          <nz-avatar [nzShape]="'square'" [nzIcon]="'user'" [nzSrc]="avatarUrl"></nz-avatar>
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item (click)="disconnectWallet()">Disconnect</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+    </div>
+  </nz-header>
+</nz-affix>
+
+<app-login-modal [showLogin]="showLogin" (modalClosed)="toggleLogin()"></app-login-modal>

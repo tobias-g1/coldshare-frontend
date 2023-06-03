@@ -1,0 +1,16 @@
+<nz-modal [nzVisible]="showLogin" [nzContent]="modalContent" [nzFooter]="null" [nzClosable]="false">
+  <ng-template #modalContent>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Connect your Wallet</h2>
+        <i nz-icon (click)="handleClose()" class="close" nzType="close" nzTheme="outline"></i>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae molestias fugit ex, recusandae excepturi
+        temporibus commodi facilis doloremque aut cumque suscipit, nesciunt neque ipsa. Soluta molestiae corporis
+        laudantium necessitatibus enim!</p>
+      <div class="options">
+        <button class="metmask" (click)="connectMetamask()">Metamask</button>
+      </div>
+    </div>
+  </ng-template>
+</nz-modal>
