@@ -1,0 +1,20 @@
+<div class="background">
+  <nz-content>
+    <div class="content-wrapper center ">
+      <div class="receive-wrapper reduced">
+        <app-page-header [header]="header" [description]="description"></app-page-header>
+        <div class="code">
+          <form #verificationForm="ngForm">
+            <div class="verification-input">
+              <ng-container *ngFor="let digit of verificationCode; let i = index">
+                <input nz-input type="text" class="digit" [(ngModel)]="verificationCode[i]" name="digit{{ i + 1 }}"
+                  maxlength="1" (paste)="onPaste($event)" (input)="onInput($event, i)" />
+              </ng-container>
+            </div>
+          </form>
+        </div>
+        <button nz-button nzType="primary" nzSize="large">Submit Code</button>
+      </div>
+    </div>
+  </nz-content>
+</div>

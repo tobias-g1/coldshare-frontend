@@ -7,6 +7,8 @@ import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 @NgModule({
   declarations: [
     HeaderComponent
@@ -16,9 +18,11 @@ import { SharedModule } from '../shared/shared.module';
     NzButtonModule,
     NzLayoutModule,
     NzAffixModule,
+    NzIconModule,
     NzAvatarModule,
     NzDropDownModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent

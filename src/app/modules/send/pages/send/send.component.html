@@ -1,0 +1,13 @@
+<nz-content>
+  <div class="content-wrapper center">
+    <div class="send-wrapper reduced">
+      <app-page-header [header]="header" [description]="description"></app-page-header>
+      <nz-upload nzType="drag" [nzMultiple]="true" nzAction="" (nzChange)="handleChange($event)">
+        <div class="upload-wrapper">
+          <span>Drag and Drop your file or</span>
+          <button nz-button nzType="primary">Browse</button>
+        </div>
+      </nz-upload>
+    </div>
+  </div>
+</nz-content>
