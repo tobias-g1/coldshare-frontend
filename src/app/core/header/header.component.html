@@ -1,14 +1,25 @@
 <nz-affix>
   <nz-header>
     <div class="left">
-      <img src="assets/img/logo.png" alt="Logo">
+      <img routerLink="/" src="assets/img/logo.png" alt="Logo" class="logo">
     </div>
     <div class="center nav">
       <ul>
-        <li>Send</li>
-        <li>Receive</li>
+        <li>
+          <a routerLink="/send" routerLinkActive="active">Send</a>
+        </li>
+        <li>
+          <a routerLink="/receive" routerLinkActive="active">Receive</a>
+        </li>
+        <li *ngIf="connectedAddress">
+          <a routerLink="/my-files" routerLinkActive="active">My Files</a>
+        </li>
+        <li *ngIf="connectedAddress">
+          <a routerLink="/shared-with-me" routerLinkActive="active">Shared with Me</a>
+        </li>
       </ul>
     </div>
+
     <div class="right">
       <button nz-button nzType="primary" nzSize="large" *ngIf="!connectedAddress" (click)="toggleLogin()">Login</button>
       <div class="user-info" *ngIf="connectedAddress">

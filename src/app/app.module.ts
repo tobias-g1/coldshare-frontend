@@ -15,6 +15,9 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './modules/home/pages/home/home.component';
 import { HomeModule } from './modules/home/home.module';
+import { ReceiveModule } from './modules/receive/receive.module';
+import { SendModule } from './modules/send/send.module';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 registerLocaleData(en);
 
@@ -31,11 +34,14 @@ registerLocaleData(en);
     CoreModule,
     NzLayoutModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    ReceiveModule,
+    SendModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: NzMessageService }
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,11 @@ nz-header {
   justify-content: space-between;
   align-items: center;
 
+  .logo {
+    height: 30px;
+    cursor: pointer;
+  }
+
   .user-info {
     img {
       height: 50px;
@@ -14,15 +19,38 @@ nz-header {
       list-style: none;
       padding: 0;
       display: flex;
-      font-weight: bold;
       margin: 0;
       font-size: 17px;
 
       li {
-        margin-left: 7.5px;
-        margin-right: 7.5px;
+        margin-left: 10px;
+        margin-right: 10px;
         cursor: pointer;
+
+        a {
+          transition: color 0.3s ease-in-out;
+        }
+
+        a:not(.active) {
+          color: black;
+        }
+
+        a.active {
+          animation: fade-in 0.5s ease-in-out;
+          font-weight: 500;
+        }
       }
     }
   }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
 }
