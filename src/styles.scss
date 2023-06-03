@@ -6,6 +6,11 @@ nz-content {
   min-height: calc(100vh - 65px) !important;
 }
 
+* {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}
+
 h1,
 h2,
 h3,
@@ -16,10 +21,21 @@ h6 {
   font-family: 'Playfair Display', serif;
 }
 
-* {
-  font-family: 'Rubik', sans-serif;
+h1 {
+  font-size: 30px;
 }
 
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  color: #343434;
+}
 
 .modal-header {
   display: flex;
