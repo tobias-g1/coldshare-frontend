@@ -5,13 +5,13 @@ import { HomeRoutingModule } from './home.routing.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { HeroComponent } from './components/hero/hero.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { BenefitPanelComponent } from './components/benefit-panel/benefit-panel.component';
 
 @NgModule({
   declarations: [
-
-
     HomeComponent,
-    HeroComponent
+    HeroComponent,
+    BenefitPanelComponent
   ],
   imports: [
     CommonModule,

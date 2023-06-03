@@ -1,0 +1,13 @@
+.benefit-panel {
+  background: #F0F8FF;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  .label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
