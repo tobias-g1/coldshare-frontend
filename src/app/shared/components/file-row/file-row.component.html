@@ -4,7 +4,7 @@
     <span class="name">{{ file.name }}</span>
   </div>
   <span class="date">
-    {{ file.createdAt }}
+    {{ getFormattedDate() }}
   </span>
   <div class="options">
     <span nz-icon nzType="download" nzTheme="outline" (click)="download()"></span>

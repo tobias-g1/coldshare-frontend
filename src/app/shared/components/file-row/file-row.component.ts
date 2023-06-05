@@ -3,6 +3,7 @@ import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { FileService } from 'src/app/core/services/file/file.service';
 import { MetaMaskService } from 'src/app/core/services/metamask/metamask.service';
 import { File, PinCode } from '../../models/file.model';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-file-row',
@@ -130,5 +131,9 @@ export class FileRowComponent {
     }
   }
 
+  getFormattedDate() {
+    const createdAtDate = new Date(this.file.createdAt);
+    return format(createdAtDate, 'MMM dd, yyyy');
+  }
 
 }
