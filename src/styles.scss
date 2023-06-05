@@ -97,3 +97,73 @@ nz-upload {
   width: 100% !important;
   max-width: 800px !important;
 }
+
+
+@media screen and (max-width: 768px) {
+  nz-content,
+    nz-header,
+    nz-footer {
+      padding: 25px !important
+    }
+
+    .hero-wrapper {
+      .header {
+        font-size: 65px !important;
+        line-height: 65px !important;
+      }
+    }
+
+    nz-header {
+      .logo {
+        height: 35px !important;
+      }
+    }
+
+    .nav {
+      display: none !important;
+    }
+
+    .banner,
+    .benefit-panel {
+      padding: 25px !important;
+    }
+
+    .benefit-panel {
+      .item {
+        margin: 0 !important;
+        margin-bottom: 25px !important;
+      }
+    }
+
+
+
+    .benefit-panel {
+      flex-direction: column;
+    }
+
+    .footer-content {
+      flex-direction: column;
+
+      .logo {
+        img {
+          margin-bottom: 12.5px;
+          width: 150px !important;
+        }
+      }
+    }
+
+    .footer-info {
+      text-align: center !important;
+    }
+
+    .main {
+      display: none;
+    }
+
+    .hero-wrapper {
+      .left {
+        max-width: 100%;
+      }
+    }
+}
+
