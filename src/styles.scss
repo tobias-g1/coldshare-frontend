@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Rubik:wght@400;500;600;700&display=swap');
 
 nz-content {
-  padding: 50px 200px;
+  padding: 50px 150px;
   min-height: calc(100vh - 65px) !important;
 }
 
@@ -14,7 +14,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -55,8 +54,12 @@ button {
 
 nz-header {
   height: 80px !important;
-  padding: 0px 100px !important;
+  padding: 0px 150px !important;
   border-bottom: 2px solid #f1f8ff;
+}
+
+nz-footer {
+  padding: initial 150px !important;
 }
 
 .reduced {
