@@ -13,6 +13,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { ShareModelComponent } from './components/share-model/share-model.component';
 import { CodeModalComponent } from './components/code-modal/code-modal.component';
 import { FormsModule } from '@angular/forms';
+import { FileModalComponent } from './components/file-modal/file-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     PageHeaderComponent,
     FileRowComponent,
     ShareModelComponent,
-    CodeModalComponent
+    CodeModalComponent,
+    FileModalComponent
   ],
   imports: [
     CommonModule,
@@ -31,14 +33,15 @@ import { FormsModule } from '@angular/forms';
     NzInputModule,
     ReactiveFormsModule,
     NzDropDownModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     LoginModalComponent,
     PageHeaderComponent,
     FileRowComponent,
     ShareModelComponent,
-    CodeModalComponent
+    CodeModalComponent,
+    FileModalComponent
   ]
 })
 export class SharedModule { }

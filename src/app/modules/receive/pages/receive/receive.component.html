@@ -7,13 +7,18 @@
           <form #verificationForm="ngForm">
             <div class="verification-input">
               <input *ngFor="let digit of verificationCode; let i = index" nz-input type="text" class="digit"
-                [(ngModel)]="verificationCode[i]" name="digit{{ i + 1 }}" maxlength="1" (paste)="onPaste($event, i)"
+                [(ngModel)]="verificationCode[i]" name="digit{{ i + 1 }}" maxlength="1" (paste)="onPaste($event)"
                 (keydown)="onKeyDown($event, i)" #inputElement />
             </div>
           </form>
         </div>
-        <button nz-button nzType="primary" nzSize="large" [disabled]="!isFormFilled()">Submit Code</button>
+        <button nz-button nzType="primary" nzSize="large" [disabled]="!isFormFilled()" (click)="submitForm()">Submit
+          Code</button>
+
       </div>
+      <nz-alert nzType="info" nzMessage="To access your files later, you can sign in via Metamask, it's free!" nzShowIcon></nz-alert>
     </div>
+
   </nz-content>
 </div>
+<app-file-modal [showModal]="showFileModal" (modalClosed)="toggleFileModal()" [file]="file"></app-file-modal>
