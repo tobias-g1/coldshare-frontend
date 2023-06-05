@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { FileService } from 'src/app/core/services/file/file.service';
 import { MetaMaskService } from 'src/app/core/services/metamask/metamask.service';
-import { File } from '../../models/file.model';
+import { File, PinCode } from '../../models/file.model';
 
 @Component({
   selector: 'app-file-row',
@@ -15,10 +16,13 @@ export class FileRowComponent {
   showShareModal = false;
   showCodeModal = false;
   confirmModal?: NzModalRef;
+  shareLink = '';
+  shareCode = '';
 
   constructor(
     private modal: NzModalService,
-    public MetaMaskService: MetaMaskService
+    public MetaMaskService: MetaMaskService,
+    public fileService: FileService
   ) {
 
   }
@@ -29,7 +33,7 @@ export class FileRowComponent {
       selectedAddress = address;
     });
 
-    return this.file?.owner.address === selectedAddress;
+    return (selectedAddress) ? this.file?.owner.address === selectedAddress : false;
   }
 
 
@@ -39,6 +43,21 @@ export class FileRowComponent {
 
   toggleShareModal() {
     this.showShareModal = !this.showShareModal;
+  }
+
+  launchCodeModal() {
+    this.fileService.getShareCode(this.file._id).subscribe(res => {
+      this.shareCode = res.pinCode;
+      this.toggleCodeModal();
+    })
+  }
+
+  launchShareModal() {
+    this.fileService.getShareLink(this.file._id).subscribe((res) => {
+      this.shareLink = window.location.host + '/transfer/' + res.link;
+      console.log(this.shareLink)
+      this.toggleShareModal();
+    })
   }
 
   showDeleteConfirm(): void {

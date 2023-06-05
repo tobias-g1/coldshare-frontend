@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-share-model',
@@ -8,11 +9,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ShareModelComponent {
 
   @Input() showModal: boolean = false;
+  @Input() fileShareLink: string = '';
   @Output() modalClosed: EventEmitter<boolean> = new EventEmitter();
 
-  description: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet luctus risus, eu consequat mi placerat vitae. Mauris aliquam mi ut elementum dapibus.';
+  description: string = 'Share your file and open it effortlessly for collaboration. Connect and collaborate seamlessly.';
 
-  fileShareLink: string = 'https://example.com/file-share-link';
+  constructor(private message: NzMessageService) { }
 
   handleClose() {
     this.modalClosed.emit(true);
@@ -21,7 +23,18 @@ export class ShareModelComponent {
   copyLink() {
     const linkInputElement = document.querySelector('.share-link') as HTMLInputElement;
     linkInputElement.select();
-    document.execCommand('copy');
+
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(linkInputElement.value)
+        .then(() => {
+          this.message.create('success', 'Link copied to clipboard');
+        })
+        .catch((error) => {
+          console.error('Failed to copy link to clipboard:', error);
+        });
+    } else {
+      console.error('Clipboard API not available');
+    }
   }
 
 }

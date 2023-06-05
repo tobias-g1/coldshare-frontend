@@ -1,6 +1,4 @@
 <div class="file-row" *ngIf="file">
-
-
   <div class="left">
     <img class="icon" src="assets/img/file-icons/pdf.png" alt="">
     <span class="name">{{ file.name }}</span>
@@ -10,19 +8,19 @@
   </span>
   <div class="options">
     <span nz-icon nzType="download" nzTheme="outline" (click)="download()"></span>
-    <span nz-icon nzType="share-alt"  *ngIf="isOwner()" nzTheme="outline" (click)="toggleShareModal()"></span>
+    <span nz-icon nzType="share-alt"  *ngIf="isOwner()" nzTheme="outline" (click)="launchShareModal()"></span>
     <a nz-dropdown [nzDropdownMenu]="menu" *ngIf="isOwner()">
       <span nz-icon nzType="more" nzTheme="outline"></span>
     </a>
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu nzSelectable>
-        <li nz-menu-item (click)="toggleCodeModal()">View Code</li>
-        <li nz-menu-item (click)="toggleShareModal()">Share</li>
+        <li nz-menu-item (click)="launchCodeModal()">View Code</li>
+        <li nz-menu-item (click)="launchShareModal()">Share</li>
         <li nz-menu-item (click)="showDeleteConfirm()">Delete</li>
       </ul>
     </nz-dropdown-menu>
   </div>
 </div>
 
-<app-share-model [showModal]="showShareModal" (modalClosed)="toggleShareModal()"></app-share-model>
-<app-code-modal [showModal]="showCodeModal" (modalClosed)="toggleCodeModal()"></app-code-modal>
+<app-share-model [showModal]="showShareModal" [fileShareLink]="shareLink" (modalClosed)="toggleShareModal()"></app-share-model>
+<app-code-modal [showModal]="showCodeModal" [shareCode]="shareCode" (modalClosed)="toggleCodeModal()"></app-code-modal>
