@@ -9,29 +9,30 @@ export class FeaturesComponent {
 
   items = [
     {
-      title: 'Secure File Transfers',
-      description: "Enjoy peace of mind with our platform's robust security measures, ensuring that your files are transferred securely and protected from unauthorized access."
+      "title": "Fortified File Transfers",
+      "description": "Enjoy peace of mind with our platform's robust security measures, ensuring that your files are transferred securely and protected from unauthorized access."
     },
     {
-      title: 'Decentralized Storage',
-      description: "Experience rapid file transfers thanks to the distributed nature of ColdStack's decentralized storage network, ensuring quick and efficient data transmission."
+      "title": "Empowering Decentralized Storage",
+      "description": "Experience lightning-fast file transfers facilitated by our cutting-edge decentralized storage network, ensuring quick and efficient data transmission."
     },
     {
-      title: 'Fast Transfer Speeds',
-      description: "Experience rapid file transfers thanks to the distributed nature of ColdStack's decentralized storage network, ensuring quick and efficient data transmission."
+      "title": "Blazing Transfer Speeds",
+      "description": "Experience unparalleled file transfer speeds thanks to our distributed infrastructure, optimizing data transmission efficiency."
     },
     {
-      title: 'Expiration Dates',
-      description: "Set expiration dates for shared files, automatically revoking access after a specified period to enhance data security and confidentiality."
+      "title": "Automatic Expiration Dates",
+      "description": "Set expiration dates for shared files, automatically revoking access after a specified period to enhance data security and confidentiality."
     },
     {
-      title: 'User Friendly',
-      description: "User-Friendly Interface: Enjoy a sleek and intuitive user interface that makes file management, sharing, and collaboration effortless for users of all technical levels."
+      "title": "Intuitive User Interface",
+      "description": "Experience a sleek and user-friendly interface that simplifies file management, sharing, and collaboration for users of all technical levels."
     },
     {
-      title: 'Free',
-      description: "Rest assured that your files are encrypted during transit and storage, safeguarding your data from prying eyes and ensuring end-to-end privacy."
+      "title": "Free and Secure",
+      "description": "Enjoy our decentralized file sharing platform for free, with the assurance that your files are encrypted during transit and storage, safeguarding your data and ensuring end-to-end privacy."
     }
   ]
+
 
 }

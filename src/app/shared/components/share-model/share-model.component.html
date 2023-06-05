@@ -1,0 +1,17 @@
+<nz-modal [nzVisible]="showModal" [nzContent]="modalContent" [nzFooter]="null" [nzClosable]="false">
+  <ng-template #modalContent>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Share File</h2>
+        <i nz-icon (click)="handleClose()" class="close" nzType="close" nzTheme="outline"></i>
+      </div>
+      <p>{{ description }}</p>
+
+      <div class="share-link-input">
+        <input nz-input type="text" class="share-link" [(ngModel)]="fileShareLink" name="fileShareLink"
+          [disabled]="true" />
+        <button nz-button nzType="primary" nzSize="large" (click)="copyLink()" class="copy">Copy Link</button>
+      </div>
+    </div>
+  </ng-template>
+</nz-modal>

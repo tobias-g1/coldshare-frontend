@@ -9,8 +9,8 @@ import { NzUploadChangeParam } from 'ng-zorro-antd/upload';
 })
 export class SendComponent {
 
-  header: string = 'Send Files';
-  description: string = '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aspernatur dignissimos sint voluptat doloremque dolores recusandae illum voluptas ut nesciunt perspiciatis consequatur at et, ducimus repellenduscorporis iusto eaque omnis?'
+  header: string = 'Send A File';
+  description: string = 'Send files securely and effortlessly. Share your documents, images, videos, and more with just a few clicks. Enjoy peace of mind knowing that your files are encrypted and protected during transit. Simplify file sharing and collaboration with our user-friendly platform. Start sending files today!';
 
   constructor(private msg: NzMessageService) { }
 

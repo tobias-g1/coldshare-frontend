@@ -13,11 +13,12 @@ import { CoreModule } from './core/core.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './modules/home/pages/home/home.component';
 import { HomeModule } from './modules/home/home.module';
 import { ReceiveModule } from './modules/receive/receive.module';
 import { SendModule } from './modules/send/send.module';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { MyFilesModule } from './modules/my-files/my-files.module';
+import { SharedFilesModule } from './modules/shared-files/shared-files.module';
 
 registerLocaleData(en);
 
@@ -36,7 +37,9 @@ registerLocaleData(en);
     SharedModule,
     HomeModule,
     ReceiveModule,
-    SendModule
+    SendModule,
+    MyFilesModule,
+    SharedFilesModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
