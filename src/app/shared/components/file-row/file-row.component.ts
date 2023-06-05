@@ -71,7 +71,7 @@ export class FileRowComponent {
   }
 
   download() {
-    const fileUrl = 'https://hackathon.s3.coldstack.io/' + this.file.bucket + this.file.name;
+    const fileUrl = `https://${this.file.bucket}.s3.coldstack.io/` + this.file.key;
     window.open(fileUrl, '_blank');
   }
 
