@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Rubik:wght@400;500;600;700&display=swap');
 
 nz-content {
-  padding: 50px 200px;
+  padding: 50px 150px;
   min-height: calc(100vh - 65px) !important;
 }
 
@@ -14,7 +14,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -55,8 +54,12 @@ button {
 
 nz-header {
   height: 80px !important;
-  padding: 0px 100px !important;
+  padding: 0px 50px !important;
   border-bottom: 2px solid #f1f8ff;
+}
+
+nz-footer {
+  padding: initial 150px !important;
 }
 
 .reduced {
@@ -64,7 +67,6 @@ nz-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
   justify-content: center;
 }
 
@@ -97,3 +99,81 @@ nz-upload {
   width: 100% !important;
   max-width: 800px !important;
 }
+
+
+@media screen and (max-width: 768px) {
+  nz-content,
+    nz-header,
+    nz-footer {
+      padding: 25px !important
+    }
+
+    nz-content {
+      padding-top: 50px !important;
+    }
+
+    .hero-wrapper {
+      .header {
+        font-size: 65px !important;
+        line-height: 65px !important;
+      }
+    }
+
+    nz-header {
+      .logo {
+        height: 40px !important;
+      }
+    }
+
+    .my, .shared {
+      display: none !important;
+    }
+
+    .banner,
+    .benefit-panel {
+      padding: 25px !important;
+    }
+
+    .benefit-panel {
+      .item {
+        margin: 0 !important;
+        margin-bottom: 25px !important;
+      }
+    }
+
+
+
+    .benefit-panel {
+      flex-direction: column;
+    }
+
+    .footer-content {
+      flex-direction: column;
+
+      .logo {
+        img {
+          margin-bottom: 12.5px;
+          width: 150px !important;
+        }
+      }
+    }
+
+    .footer-info {
+      text-align: center !important;
+    }
+
+    .main {
+      display: none;
+    }
+
+    .hero-wrapper {
+      .left {
+        max-width: 100%;
+      }
+    }
+}
+
+.ant-alert {
+  margin-top: 35px !important;
+}
+

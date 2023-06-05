@@ -20,23 +20,6 @@ export class ReceiveComponent {
 
   constructor(public fileService: FileService) { }
 
-  ngAfterViewInit() {
-    this.inputElements.changes.subscribe((changes: QueryList<ElementRef>) => {
-      this.initializeInputEventListeners();
-    });
-  }
-
-  initializeInputEventListeners() {
-    this.inputElements.forEach((element, index) => {
-      element.nativeElement.addEventListener('keydown', (event: KeyboardEvent) => {
-        this.onKeyDown(event, index);
-      });
-      element.nativeElement.addEventListener('paste', (event: ClipboardEvent) => {
-        this.onPaste(event, index);
-      });
-    });
-  }
-
   onKeyDown(event: KeyboardEvent, index: number) {
     const inputValue = event.key.trim();
 
@@ -47,12 +30,12 @@ export class ReceiveComponent {
       } else {
         this.verificationCode[index] = '';
       }
-    } else if (/^[a-zA-Z0-9]+$/.test(inputValue) && !event.metaKey && !event.ctrlKey) {
+    } else if (/^[a-zA-Z0-9]+$/.test(inputValue) && event.key.length === 1 && !event.metaKey && !event.ctrlKey) {
       event.preventDefault();
       this.verificationCode[index] = inputValue.toUpperCase();
       this.updateInputValues();
       if (index < 5) {
-        this.focusNextInput(index + 1);
+        this.focusNextInput(index);
       }
     }
   }
@@ -65,10 +48,7 @@ export class ReceiveComponent {
 
     if (digits) {
       digits.forEach((digit, i) => {
-        const targetIndex = index + i;
-        if (targetIndex < 6) {
-          this.verificationCode[targetIndex] = digit.toUpperCase();
-        }
+        this.verificationCode[i] = digit.toUpperCase();
       });
 
       this.updateInputValues();
@@ -89,11 +69,7 @@ export class ReceiveComponent {
   }
 
   updateInputValues() {
-    this.inputElements.forEach((element, index) => {
-      const inputElement = element.nativeElement as HTMLInputElement;
-      inputElement.value = this.verificationCode[index];
-      inputElement.dispatchEvent(new Event('input', { bubbles: true }));
-    });
+
   }
 
   isFormFilled(): boolean {

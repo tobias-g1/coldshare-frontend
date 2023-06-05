@@ -3,6 +3,7 @@ import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { FileService } from 'src/app/core/services/file/file.service';
 import { MetaMaskService } from 'src/app/core/services/metamask/metamask.service';
 import { File, PinCode } from '../../models/file.model';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-file-row',
@@ -71,8 +72,68 @@ export class FileRowComponent {
   }
 
   download() {
-    const fileUrl = 'https://hackathon.s3.coldstack.io/' + this.file.bucket + this.file.name;
+    const fileUrl = `https://${this.file.bucket}.s3.coldstack.io/` + this.file.key;
     window.open(fileUrl, '_blank');
+  }
+
+  getFileIcon(fileFormat: string): string {
+    const format = fileFormat.toLowerCase();
+
+    switch (format) {
+      case 'image/png':
+        return 'assets/img/file-icons/png.png';
+      case 'image/jpeg':
+      case 'image/jpg':
+        return 'assets/img/file-icons/jpg.png';
+      case 'application/pdf':
+        return 'assets/img/file-icons/pdf.png';
+      case 'application/vnd.ms-powerpoint':
+      case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+        return 'assets/img/file-icons/ppt.png';
+      case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+      case 'application/vnd.ms-excel':
+        return 'assets/img/file-icons/xls.png';
+      case 'application/msword':
+      case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        return 'assets/img/file-icons/doc.png';
+      case 'audio/mpeg':
+        return 'assets/img/file-icons/mp3.png';
+      case 'video/mp4':
+      case 'video/webm':
+        return 'assets/img/file-icons/video.png';
+      case 'text/javascript':
+      case 'application/javascript':
+      case 'text/typescript':
+      case 'application/typescript':
+        return 'assets/img/file-icons/code.png';
+      case 'application/css':
+        return 'assets/img/file-icons/css.png';
+      case 'text/html':
+        return 'assets/img/file-icons/html.png';
+      case 'image/gif':
+        return 'assets/img/file-icons/gif.png';
+      case 'video/avi':
+        return 'assets/img/file-icons/avi.png';
+      case 'application/zip':
+        return 'assets/img/file-icons/zip.png';
+      default:
+        if (format.includes('music')) {
+          return 'assets/img/file-icons/music.png';
+        } else if (format.includes('video')) {
+          return 'assets/img/file-icons/video.png';
+        } else if (format.includes('code')) {
+          return 'assets/img/file-icons/code.png';
+        } else if (format.includes('picture') || format.includes('image')) {
+          return 'assets/img/file-icons/picture.png';
+        } else {
+          return 'assets/img/file-icons/unknown.png';
+        }
+    }
+  }
+
+  getFormattedDate() {
+    const createdAtDate = new Date(this.file.createdAt);
+    return format(createdAtDate, 'MMM dd, yyyy');
   }
 
 }

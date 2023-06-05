@@ -8,7 +8,7 @@ export interface UploadResponse {
 
 export interface File {
   name: string
-  path: string
+  key: string
   bucket: string
   owner: any
   format: string

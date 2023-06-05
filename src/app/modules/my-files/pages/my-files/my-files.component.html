@@ -1,17 +1,17 @@
 <nz-content>
-  <app-page-header [header]="header" [description]="description"></app-page-header>
+  <app-page-header *ngIf="files && files.length !== 0" [header]="header" [description]="description"></app-page-header>
   <app-file-row *ngFor="let file of files" [file]="file"></app-file-row>
   <div class="empty-wrapper" *ngIf="files && files.length === 0">
-    <nz-empty nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+    <nz-empty
       [nzNotFoundContent]="contentTpl" [nzNotFoundFooter]="footerTpl">
       <ng-template #contentTpl>
-        <h2>No Files to Show</h2>
+        <h1>You haven't uploaded any files yet</h1>
         <span>
           You haven't got any files yet, click the upload button below to add your first file.
         </span>
       </ng-template>
       <ng-template #footerTpl>
-        <button nz-button nzType="primary">Send a file</button>
+        <button nz-button nzType="primary" nzSize="large" routerLink="/send">Send a file</button>
       </ng-template>
     </nz-empty>
   </div>

@@ -12,10 +12,10 @@
           <a routerLink="/receive" routerLinkActive="active">Receive</a>
         </li>
         <li *ngIf="connectedAddress">
-          <a routerLink="/my-files" routerLinkActive="active">My Files</a>
+          <a routerLink="/my-files" class="my" routerLinkActive="active">My Files</a>
         </li>
         <li *ngIf="connectedAddress">
-          <a routerLink="/shared-files" routerLinkActive="active">Shared with Me</a>
+          <a routerLink="/shared-files" class="shared" routerLinkActive="active">Shared</a>
         </li>
       </ul>
     </div>
@@ -28,7 +28,9 @@
         </a>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu nzSelectable>
-            <li nz-menu-item (click)="disconnectWallet()">Disconnect</li>
+              <li nz-menu-item routerLink="/my-files">My Files</li>
+              <li nz-menu-item routerLink="/shared-files">Shared</li>
+            <li nz-menu-item (click)="disconnectWallet()">Sign Out</li>
           </ul>
         </nz-dropdown-menu>
       </div>

@@ -4,7 +4,7 @@ nz-header {
   align-items: center;
 
   .logo {
-    height: 30px;
+    height: 45px;
     cursor: pointer;
   }
 
@@ -18,7 +18,7 @@ nz-header {
     ul {
       list-style: none;
       padding: 0;
-      display: flex;
+      display: inline-flex;
       margin: 0;
       font-size: 17px;
 
@@ -32,12 +32,13 @@ nz-header {
         }
 
         a:not(.active) {
-          color: black;
+          color: #19506e;
+          font-weight: 500;
         }
 
         a.active {
           animation: fade-in 0.5s ease-in-out;
-          font-weight: 500;
+          font-weight: bold;
         }
       }
     }
