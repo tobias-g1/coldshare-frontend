@@ -1,0 +1,34 @@
+.file-row {
+  justify-content: space-between;
+  background: white;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+
+  .left {
+    .name {
+      font-size: 17px;
+      font-weight: 500;
+      color: #19506E;
+    }
+
+  }
+
+  .date {
+    font-size: 17px;
+  }
+
+  .icon {
+    height: 40px;
+    margin-right: 15px;
+  }
+
+  .options {
+    span {
+      font-size: 25px;
+      cursor: pointer;
+      margin-left: 20px;
+      color: #C4D1D9;
+    }
+  }
+}

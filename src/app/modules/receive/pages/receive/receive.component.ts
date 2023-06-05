@@ -7,46 +7,74 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./receive.component.scss']
 })
 export class ReceiveComponent {
-
   @ViewChild('verificationForm', { static: false }) verificationForm: NgForm;
   header: string = 'Receive Files';
-  description: string = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aspernatur dignissimos sint voluptat doloremque dolores recusandae illum voluptas ut nesciunt perspiciatis consequatur at et, ducimus repellenduscorporis iusto eaque omnis?'
+  description: string = 'Receive files securely with a unique pin code. Simply share the pin code with the sender, and they can easily upload files to your account. No need for complicated file transfer methods or email attachments. Access your received files anytime, anywhere. Start receiving files effortlessly!';
 
   verificationCode: string[] = ['', '', '', '', '', ''];
+  inputElements: ElementRef[] = [];
 
-  onPaste(event: ClipboardEvent) {
+  ngAfterViewInit() {
+    this.inputElements.forEach((element, index) => {
+      element.nativeElement.addEventListener('keydown', (event: KeyboardEvent) => this.onKeyDown(event, index));
+      element.nativeElement.addEventListener('paste', (event: ClipboardEvent) => this.onPaste(event, index));
+    });
+  }
+
+  onKeyDown(event: KeyboardEvent, index: number) {
+    const inputValue = event.key.trim();
+
+    if (inputValue === 'Backspace') {
+      event.preventDefault();
+
+      if (index > 0 && this.verificationCode[index] === '') {
+        const previousInput = this.inputElements[index - 1].nativeElement as HTMLInputElement;
+        previousInput.focus();
+        previousInput.value = '';
+        this.verificationCode[index - 1] = '';
+      } else {
+        this.verificationCode[index] = '';
+      }
+    } else if (/^[a-zA-Z0-9]+$/.test(inputValue)) {
+      event.preventDefault();
+
+      this.verificationCode[index] = inputValue.toUpperCase();
+      this.updateInputValues();
+
+      if (index < 5) {
+        const nextInput = this.inputElements[index + 1].nativeElement as HTMLInputElement;
+        nextInput.focus();
+      }
+    }
+  }
+
+
+  onPaste(event: ClipboardEvent, index: number) {
+    event.preventDefault();
     const pastedData = event.clipboardData?.getData('text/plain');
     const sanitizedData = pastedData?.replace(/[^a-zA-Z0-9]/g, ''); // Remove non-alphanumeric characters
     const digits = sanitizedData?.slice(0, 6).split('');
 
-    for (let i = 0; i < 6; i++) {
-      if (digits && digits[i]) {
-        this.verificationCode[i] = digits[i];
-      }
-    }
+    if (digits) {
+      digits.forEach((digit, i) => {
+        if (index + i < 6) {
+          this.verificationCode[index + i] = digit.toUpperCase();
+        }
+      });
 
-    this.moveFocusToNextInput(0); // Move focus to the first input field
-  }
+      this.updateInputValues();
 
-  onInput(event: any, index: number) {
-    const inputElement = event.target as HTMLInputElement;
-    const inputValue = inputElement.value.trim();
-
-    if (inputValue.length === 1) {
-      this.verificationCode[index] = inputValue;
-      inputElement.blur();
-      this.moveFocusToNextInput(index + 1); // Move focus to the next input field
-    }
-  }
-
-  moveFocusToNextInput(currentIndex: number) {
-    const nextIndex = currentIndex;
-    if (nextIndex < this.verificationCode.length) {
-      const nextInput = document.querySelector(`input[name=digit${nextIndex + 1}]`) as HTMLInputElement;
-      if (nextInput) {
+      if (index + digits.length < 6) {
+        const nextInput = this.inputElements[index + digits.length].nativeElement as HTMLInputElement;
         nextInput.focus();
       }
     }
+  }
+
+  updateInputValues() {
+    this.inputElements.forEach((element, index) => {
+      element.nativeElement.value = this.verificationCode[index];
+    });
   }
 
   isFormFilled(): boolean {
@@ -56,7 +84,6 @@ export class ReceiveComponent {
   submitForm() {
     if (this.verificationForm.valid) {
       console.log('Form submitted');
-      // Perform additional form submission logic here
     }
   }
 }

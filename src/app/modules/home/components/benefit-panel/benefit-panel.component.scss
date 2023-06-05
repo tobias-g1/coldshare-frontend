@@ -8,11 +8,13 @@
 
 .item {
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
+  margin: 0 17.5px;
 
   .icon {
     color: white;
-    margin-right: 15px;
+    margin-bottom: 10px;
     background: #01a9c9;
     width: 50px;
     text-align: center;
@@ -24,8 +26,15 @@
     border-radius: 10px;
   }
 
-  .label {
-    font-size: 20px;
-    font-weight: bold;
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      font-size: 20px;
+      font-weight: bold;
+      color: #19506E;
+    }
   }
+
 }

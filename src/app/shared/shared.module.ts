@@ -8,11 +8,19 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { FileRowComponent } from './components/file-row/file-row.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { ShareModelComponent } from './components/share-model/share-model.component';
+import { CodeModalComponent } from './components/code-modal/code-modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     LoginModalComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    FileRowComponent,
+    ShareModelComponent,
+    CodeModalComponent
   ],
   imports: [
     CommonModule,
@@ -21,11 +29,16 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     NzFormModule,
     NzButtonModule,
     NzInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NzDropDownModule,
+    FormsModule
   ],
   exports: [
     LoginModalComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    FileRowComponent,
+    ShareModelComponent,
+    CodeModalComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,36 @@
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-info {
+  font-size: 12px;
+  text-align: right;
+
+  p {
+    font-size: 15px;
+    margin: 5px 0;
+    color: white;
+
+    &:nth-child(2) {
+      font-size: 13px;
+    }
+  }
+}
+
+
+.active {
+  font-weight: bold;
+}

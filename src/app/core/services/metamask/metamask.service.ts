@@ -30,6 +30,7 @@ export class MetaMaskService {
   private token: string;
 
   constructor(private userService: UserService) {
+
     if (typeof window.ethereum === 'undefined') {
       console.warn('MetaMask is not installed!');
       return;
@@ -41,6 +42,7 @@ export class MetaMaskService {
 
     window.ethereum.on('accountsChanged', (accounts: string[]) => {
       if (accounts.length > 0) {
+
         this.selectedAddressSubject.next(accounts[0]);
         this.getToken(accounts[0]);
       } else {
@@ -170,6 +172,9 @@ export class MetaMaskService {
   }
 
   async getToken(address: string): Promise<void> {
+
+    this.token = localStorage.getItem('token');
+
     if (!this.token) {
       await this.login(address);
     }
