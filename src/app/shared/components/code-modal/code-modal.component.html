@@ -5,13 +5,10 @@
         <h2>View Share Code</h2>
         <i nz-icon (click)="handleClose()" class="close" nzType="close" nzTheme="outline"></i>
       </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae molestias fugit ex, recusandae excepturi
-        temporibus commodi facilis doloremque aut cumque suscipit, nesciunt neque ipsa. Soluta molestiae corporis
-        laudantium necessitatibus enim!</p>
-
+      <p>Share your file via a code and open it effortlessly for collaboration. Connect and collaborate seamlessly.</p>
       <div class="verification-input">
-        <input *ngFor="let digit of verificationCode; let i = index" nz-input type="text" class="digit"
-          [(ngModel)]="verificationCode[i]" name="digit{{ i + 1 }}" maxlength="1" [disabled]="true" />
+        <input *ngFor="let digit of verificationCode; let i = index" nz-input type="text" class="digit" nzSize="large"
+          [(ngModel)]="verificationCode[i]" name="digit{{ i + 1 }}" maxlength="1" [disabled]="true"/>
       </div>
       <button nz-button nzType="primary" nzSize="large" class="copy" (click)="copyCode()">Copy Code</button>
     </div>

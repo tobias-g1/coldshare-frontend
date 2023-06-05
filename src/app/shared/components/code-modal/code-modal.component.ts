@@ -14,9 +14,7 @@ export class CodeModalComponent implements OnInit, OnChanges {
 
   verificationCode: string[] = ['', '', '', '', '', ''];
 
-  constructor(private message: NzMessageService) {
-
-  }
+  constructor(private message: NzMessageService) {}
 
   ngOnInit() {
     this.checkAndSetVerificationCode();
