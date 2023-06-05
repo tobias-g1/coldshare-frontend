@@ -1,6 +1,6 @@
 <div class="file-row" *ngIf="file">
   <div class="left">
-    <img class="icon" src="assets/img/file-icons/pdf.png" alt="">
+    <img class="icon" [src]="getFileIcon(file.format)" alt="">
     <span class="name">{{ file.name }}</span>
   </div>
   <span class="date">
