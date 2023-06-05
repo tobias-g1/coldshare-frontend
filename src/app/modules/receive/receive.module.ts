@@ -6,6 +6,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { FormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 
 
@@ -19,7 +20,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NzLayoutModule,
     FormsModule,
     NzButtonModule,
-    SharedModule
+    SharedModule,
+    NzAlertModule
   ],
   exports: [
     ReceiveComponent

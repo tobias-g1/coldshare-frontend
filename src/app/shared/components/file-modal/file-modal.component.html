@@ -1,0 +1,12 @@
+<nz-modal [nzVisible]="showModal" [nzContent]="modalContent" [nzFooter]="null" [nzClosable]="false">
+  <ng-template #modalContent>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Download File</h2>
+        <i nz-icon (click)="handleClose()" class="close" nzType="close" nzTheme="outline"></i>
+      </div>
+      <p>{{ description }}</p>
+      <app-file-row [file]="file"></app-file-row>
+    </div>
+  </ng-template>
+</nz-modal>

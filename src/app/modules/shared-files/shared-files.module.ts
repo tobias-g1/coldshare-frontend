@@ -4,6 +4,8 @@ import { SharedFilesComponent } from './pages/shared-files/shared-files.componen
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { SharedFilesRoutingModule } from './shared-files.routing.module';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { SharedFilesRoutingModule } from './shared-files.routing.module';
     CommonModule,
     SharedModule,
     SharedFilesRoutingModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzEmptyModule,
+    NzButtonModule
   ],
   exports: [
     SharedFilesComponent

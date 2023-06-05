@@ -1,14 +1,17 @@
-<div class="file-row">
+<div class="file-row" *ngIf="file">
+
+
   <div class="left">
     <img class="icon" src="assets/img/file-icons/pdf.png" alt="">
-    <span class="name">File Name</span>
+    <span class="name">{{ file.name }}</span>
   </div>
   <span class="date">
-    22nd December 1990
+    {{ file.createdAt }}
   </span>
   <div class="options">
-    <span nz-icon nzType="share-alt" nzTheme="outline" (click)="toggleShareModal()"></span>
-    <a nz-dropdown [nzDropdownMenu]="menu">
+    <span nz-icon nzType="download" nzTheme="outline" (click)="download()"></span>
+    <span nz-icon nzType="share-alt"  *ngIf="isOwner()" nzTheme="outline" (click)="toggleShareModal()"></span>
+    <a nz-dropdown [nzDropdownMenu]="menu" *ngIf="isOwner()">
       <span nz-icon nzType="more" nzTheme="outline"></span>
     </a>
     <nz-dropdown-menu #menu="nzDropdownMenu">
@@ -20,5 +23,6 @@
     </nz-dropdown-menu>
   </div>
 </div>
+
 <app-share-model [showModal]="showShareModal" (modalClosed)="toggleShareModal()"></app-share-model>
 <app-code-modal [showModal]="showCodeModal" (modalClosed)="toggleCodeModal()"></app-code-modal>

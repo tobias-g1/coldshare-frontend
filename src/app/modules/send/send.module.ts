@@ -7,6 +7,7 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 
 
@@ -21,7 +22,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzUploadModule,
     NzIconModule,
     SharedModule,
-    NzButtonModule
+    NzButtonModule,
+    NzAlertModule
   ],
   exports: [
     SendComponent
