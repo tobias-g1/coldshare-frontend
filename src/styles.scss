@@ -54,7 +54,7 @@ button {
 
 nz-header {
   height: 80px !important;
-  padding: 0px 150px !important;
+  padding: 0px 50px !important;
   border-bottom: 2px solid #f1f8ff;
 }
 
@@ -67,7 +67,6 @@ nz-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
   justify-content: center;
 }
 
@@ -109,6 +108,10 @@ nz-upload {
       padding: 25px !important
     }
 
+    nz-content {
+      padding-top: 50px !important;
+    }
+
     .hero-wrapper {
       .header {
         font-size: 65px !important;
@@ -118,11 +121,11 @@ nz-upload {
 
     nz-header {
       .logo {
-        height: 35px !important;
+        height: 40px !important;
       }
     }
 
-    .nav {
+    .my, .shared {
       display: none !important;
     }
 
@@ -168,5 +171,9 @@ nz-upload {
         max-width: 100%;
       }
     }
+}
+
+.ant-alert {
+  margin-top: 35px !important;
 }
 
