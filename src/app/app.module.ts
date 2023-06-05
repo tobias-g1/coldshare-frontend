@@ -19,6 +19,7 @@ import { SendModule } from './modules/send/send.module';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { MyFilesModule } from './modules/my-files/my-files.module';
 import { SharedFilesModule } from './modules/shared-files/shared-files.module';
+import { ShareLandingModule } from './modules/share-landing/share-landing.module';
 
 registerLocaleData(en);
 
@@ -39,7 +40,8 @@ registerLocaleData(en);
     ReceiveModule,
     SendModule,
     MyFilesModule,
-    SharedFilesModule
+    SharedFilesModule,
+    ShareLandingModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
