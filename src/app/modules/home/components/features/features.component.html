@@ -1,0 +1,21 @@
+<div class="features">
+  <h1>Why Choose Our Platform</h1>
+  <p>Discover the powerful features of our platform that make file sharing and collaboration seamless. Experience secure
+    and efficient file transfers, decentralized storage, fast transfer speeds, expiration dates for shared files, a
+    user-friendly interface, and all of this for free. Join us today and revolutionize the way you share and manage your
+    files.</p>
+
+  <div nz-row nzGutter="35" class="items">
+    <div nz-col nzXs="24" nzSm="24" nzMd="6" nzLg="8" nzXl="8" *ngFor="let item of items">
+      <div class="item">
+        <div class="icon">
+          <span nz-icon nzType="compass" nzTheme="fill"></span>
+        </div>
+        <h3>
+          {{ item.title }}
+        </h3>
+        <p> {{ item.description }} </p>
+      </div>
+    </div>
+  </div>
+</div>

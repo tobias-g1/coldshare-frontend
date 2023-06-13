@@ -1,0 +1,18 @@
+<nz-content>
+  <app-page-header *ngIf="files && files.length !== 0" [header]="header" [description]="description"></app-page-header>
+  <app-file-row *ngFor="let file of files" [file]="file"></app-file-row>
+  <div class="empty-wrapper" *ngIf="files && files.length === 0">
+    <nz-empty
+      [nzNotFoundContent]="contentTpl" [nzNotFoundFooter]="footerTpl">
+      <ng-template #contentTpl>
+        <h1>No Files to Show</h1>
+        <span>
+          You haven't got any files yet, click the upload button below to add your first file.
+        </span>
+      </ng-template>
+      <ng-template #footerTpl>
+        <button nz-button nzType="primary" nzSize="large" routerLink="/receive">Receive a file</button>
+      </ng-template>
+    </nz-empty>
+  </div>
+</nz-content>

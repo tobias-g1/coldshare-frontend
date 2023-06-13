@@ -1,0 +1,17 @@
+<nz-modal [nzVisible]="showLogin" [nzContent]="modalContent" [nzFooter]="null" [nzClosable]="false">
+  <ng-template #modalContent>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Connect your Wallet</h2>
+        <i nz-icon (click)="handleClose()" class="close" nzType="close" nzTheme="outline"></i>
+      </div>
+      <p>Securely connect your wallet to access all the features.</p>
+      <div class="options">
+        <div class="login-option" (click)="connectMetamask()">
+          <img src="assets/img/metamask.png" alt="" srcset="">
+          <span >Login via <b>Metamask</b></span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</nz-modal>

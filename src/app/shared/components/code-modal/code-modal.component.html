@@ -1,0 +1,16 @@
+<nz-modal [nzVisible]="showModal" [nzContent]="modalContent" [nzFooter]="null" [nzClosable]="false">
+  <ng-template #modalContent>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>View Share Code</h2>
+        <i nz-icon (click)="handleClose()" class="close" nzType="close" nzTheme="outline"></i>
+      </div>
+      <p>Share your file via a code and open it effortlessly for collaboration. Connect and collaborate seamlessly.</p>
+      <div class="verification-input">
+        <input *ngFor="let digit of verificationCode; let i = index" nz-input type="text" class="digit" nzSize="large"
+          [(ngModel)]="verificationCode[i]" name="digit{{ i + 1 }}" maxlength="1" [disabled]="true"/>
+      </div>
+      <button nz-button nzType="primary" nzSize="large" class="copy" (click)="copyCode()">Copy Code</button>
+    </div>
+  </ng-template>
+</nz-modal>

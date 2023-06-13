@@ -1,1 +1,183 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Rubik:wght@400;500;600;700&display=swap');
+
+nz-content {
+  padding: 50px 150px;
+  min-height: calc(100vh - 65px) !important;
+}
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p, li {
+  color: #757575;
+  font-size: 16px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .close {
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+button {
+  font-weight: bold;
+}
+
+nz-header {
+  height: 80px !important;
+  padding: 0px 50px !important;
+  border-bottom: 2px solid #f1f8ff;
+}
+
+nz-footer {
+  padding: initial 150px !important;
+}
+
+.reduced {
+  max-width: 990px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-position-x: -100px;
+  background-position-y: -100px;
+}
+
+nz-upload {
+  width: 100% !important;
+}
+
+.ant-upload.ant-upload-drag {
+  width: 100% !important;
+  background: #f1f8ff !important;
+  border: 2px dashed #f1f8ff !important;
+  border-radius: 20px !important;
+}
+
+.ant-modal {
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+
+@media screen and (max-width: 768px) {
+  nz-content,
+    nz-header,
+    nz-footer {
+      padding: 25px !important
+    }
+
+    nz-content {
+      padding-top: 50px !important;
+    }
+
+    .hero-wrapper {
+      .header {
+        font-size: 65px !important;
+        line-height: 65px !important;
+      }
+    }
+
+    nz-header {
+      .logo {
+        height: 40px !important;
+      }
+    }
+
+    .my, .shared {
+      display: none !important;
+    }
+
+    .banner,
+    .benefit-panel {
+      padding: 25px !important;
+    }
+
+    .benefit-panel {
+      .item {
+        margin: 0 !important;
+        margin-bottom: 25px !important;
+      }
+    }
+
+
+
+    .benefit-panel {
+      flex-direction: column;
+    }
+
+    .footer-content {
+      flex-direction: column;
+
+      .logo {
+        img {
+          margin-bottom: 12.5px;
+          width: 150px !important;
+        }
+      }
+    }
+
+    .footer-info {
+      text-align: center !important;
+    }
+
+    .main {
+      display: none;
+    }
+
+    .hero-wrapper {
+      .left {
+        max-width: 100%;
+      }
+    }
+
+    .date {
+      display: none;
+    }
+}
+
+.ant-alert {
+  margin-top: 35px !important;
+}
+

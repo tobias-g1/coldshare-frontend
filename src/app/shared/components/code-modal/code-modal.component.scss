@@ -1,0 +1,28 @@
+.digit {
+  background: #f1f8ff;
+  border: 0;
+  height: 65px;
+  text-align: center;
+  font-size: 36px;
+  width: 57px;
+  margin: 10.5px;
+  text-transform: uppercase;
+}
+
+.code {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin: auto;
+}
+
+.copy {
+  margin: auto;
+  display: block;
+  margin-top: 15px;
+}
+
+.verification-input {
+  display: flex;
+  justify-content: center;
+}
