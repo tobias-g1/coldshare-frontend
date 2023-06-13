@@ -12,7 +12,7 @@ export class FileModalComponent {
   @Input() file: File = null;
   @Output() modalClosed: EventEmitter<boolean> = new EventEmitter();
 
-  description: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet luctus risus, eu consequat mi placerat vitae. Mauris aliquam mi ut elementum dapibus.';
+  description: string = 'Click the button below to download your file.';
 
   handleClose() {
     this.modalClosed.emit(true);
