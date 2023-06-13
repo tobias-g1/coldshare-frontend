@@ -55,7 +55,7 @@ export class FileRowComponent {
 
   launchShareModal() {
     this.fileService.getShareLink(this.file._id).subscribe((res) => {
-      this.shareLink = window.location.host + '/transfer/' + res.link;
+      this.shareLink = window.location.host + '/shared/' + res.link;
       console.log(this.shareLink)
       this.toggleShareModal();
     })
