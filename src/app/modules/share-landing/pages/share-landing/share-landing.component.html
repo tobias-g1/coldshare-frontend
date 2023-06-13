@@ -1,1 +1,10 @@
-<p>share-landing works!</p>
+<nz-content>
+  <div class="content-wrapper center">
+    <div class="send-wrapper reduced">
+      <app-page-header [header]="header" [description]="description"></app-page-header>
+    </div>
+    <app-file-row [file]="file"></app-file-row>
+    <nz-alert nzType="info" nzMessage="Login to store your files for longer, your files will be deleted after 24 hours if you're not logged in."
+      nzShowIcon></nz-alert>
+  </div>
+</nz-content>

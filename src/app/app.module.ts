@@ -20,6 +20,11 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { MyFilesModule } from './modules/my-files/my-files.module';
 import { SharedFilesModule } from './modules/shared-files/shared-files.module';
 import { ShareLandingModule } from './modules/share-landing/share-landing.module';
+import { FileNotFoundModule } from './modules/file-not-found/file-not-found.module';
+import { NotFoundModule } from './modules/not-found/not-found.module';
+import { TermsModule } from './modules/terms/terms.module';
+import { CookiesModule } from './modules/cookies/cookies.module';
+import { PrivacyModule } from './modules/privacy/privacy.module';
 
 registerLocaleData(en);
 
@@ -41,7 +46,12 @@ registerLocaleData(en);
     SendModule,
     MyFilesModule,
     SharedFilesModule,
-    ShareLandingModule
+    ShareLandingModule,
+    FileNotFoundModule,
+    TermsModule,
+    CookiesModule,
+    PrivacyModule,
+    NotFoundModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
