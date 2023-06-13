@@ -4,8 +4,7 @@ import { NzUploadChangeParam, NzUploadFile } from 'ng-zorro-antd/upload';
 import { FileService } from 'src/app/core/services/file/file.service';
 import { Observable, Observer } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { File } from 'src/app/shared/models/file.model';
-import { UploadResponse } from '../../../../../../.history/src/app/shared/models/file.model_20230605123646';
+import { File, UploadResponse } from 'src/app/shared/models/file.model';
 
 @Component({
   selector: 'app-send',
