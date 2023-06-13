@@ -10,29 +10,29 @@ export class FeaturesComponent {
   items = [
     {
       "title": "Fortified File Transfers",
-      "description": "Enjoy peace of mind with our platform's robust security measures, ensuring that your files are transferred securely and protected from unauthorized access."
+      "description": "Enjoy peace of mind as our platform employs robust security measures, ensuring that your files are securely transferred and protected from unauthorized access."
     },
     {
       "title": "Empowering Decentralized Storage",
-      "description": "Experience lightning-fast file transfers facilitated by our cutting-edge decentralized storage network, ensuring quick and efficient data transmission."
+      "description": "Experience lightning-fast file transfers facilitated by our cutting-edge decentralized storage network, guaranteeing quick and efficient data transmission."
     },
     {
       "title": "Blazing Transfer Speeds",
-      "description": "Experience unparalleled file transfer speeds thanks to our distributed infrastructure, optimizing data transmission efficiency."
+      "description": "Enjoy unparalleled file transfer speeds thanks to our distributed infrastructure, optimizing data transmission efficiency for swift and seamless file sharing."
     },
     {
-      "title": "Automatic Expiration Dates",
-      "description": "Set expiration dates for shared files, automatically revoking access after a specified period to enhance data security and confidentiality."
+      "title": "Free to Use",
+      "description": "Experience the benefits of our decentralized file sharing platform completely free of charge."
     },
     {
       "title": "Intuitive User Interface",
-      "description": "Experience a sleek and user-friendly interface that simplifies file management, sharing, and collaboration for users of all technical levels."
+      "description": "Enjoy a sleek and user-friendly interface that simplifies file management, sharing, and collaboration for users of all technical levels."
     },
     {
-      "title": "Free and Secure",
-      "description": "Enjoy our decentralized file sharing platform for free, with the assurance that your files are encrypted during transit and storage, safeguarding your data and ensuring end-to-end privacy."
+      "title": "Secure and Private",
+      "description": "Rest assured knowing that your files are encrypted during transit and storage, ensuring the utmost security and end-to-end privacy for your data."
     }
-  ]
+  ];
 
 
 }

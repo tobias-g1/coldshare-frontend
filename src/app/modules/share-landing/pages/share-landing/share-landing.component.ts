@@ -10,7 +10,7 @@ import { File } from 'src/app/shared/models/file.model';
 })
 export class ShareLandingComponent implements OnInit {
   header: string = "You've Received A File";
-  description: string = 'Send files securely and effortlessly. Share your documents, images, videos, and more with just a few clicks. Enjoy peace of mind knowing that your files are encrypted and protected during transit. Simplify file sharing and collaboration with our user-friendly platform. Start sending files today!';
+  description: string = "You've recieved a file, use the options below to download your file."
   file: File;
 
   constructor(
