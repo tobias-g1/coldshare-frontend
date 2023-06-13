@@ -1,6 +1,7 @@
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FileService } from 'src/app/core/services/file/file.service';
+import { MetaMaskService } from 'src/app/core/services/metamask/metamask.service';
 import { File } from 'src/app/shared/models/file.model';
 
 @Component({
@@ -18,7 +19,10 @@ export class ReceiveComponent {
   file: File = null;
   verificationCode: string[] = Array(6).fill('');
 
-  constructor(public fileService: FileService) { }
+  constructor(
+    public fileService: FileService,
+    public metaMaskService: MetaMaskService
+    ) { }
 
   onKeyDown(event: KeyboardEvent, index: number) {
     const inputValue = event.key.trim();
