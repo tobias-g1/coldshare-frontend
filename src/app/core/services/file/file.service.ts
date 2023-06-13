@@ -17,6 +17,11 @@ export class FileService {
     return this.http.get<any>(url);
   }
 
+  getFileByShareLink(link: string): Observable<any> {
+    const url = `${this.baseUrl}/files/link/${link}`;
+    return this.http.get<any>(url);
+  }
+
   getShareCode(fileId: string): Observable<any> {
     const url = `${this.baseUrl}/files/share-pin/${fileId}`;
     return this.http.get<any>(url);
